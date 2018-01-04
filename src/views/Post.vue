@@ -6,10 +6,7 @@
       <a @click="goBack">Back to All Posts</a>
 
       <header>
-        <img
-          v-if="featured_image"
-          :src="featured_image"
-        >
+        <img :src="post.featured_image" alt="Blog Post Featured Image"/>
         <h1 v-html="title"></h1>
       </header>
 

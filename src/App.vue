@@ -1,9 +1,6 @@
 <template>
   <div id="app">
 
-    <TopBar
-      @showUpdater="showUpdater = true"
-    />
 
     <div id="wrapper">
 
@@ -32,7 +29,6 @@
   import Foot from './components/Foot';
   import Loading from './components/Loading';
   import Updater from './components/Updater';
-  import TopBar from './components/TopBar';
 
   export default {
     name: 'App',
@@ -94,8 +90,7 @@
     components: {
       Foot,
       Loading,
-      Updater,
-      TopBar
+      Updater
     }
   }
 </script>
