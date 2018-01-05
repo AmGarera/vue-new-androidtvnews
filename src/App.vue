@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-
+<navigation></navigation>
     <div id="wrapper">
 
       <Updater
@@ -29,6 +29,7 @@
   import Foot from './components/Foot';
   import Loading from './components/Loading';
   import Updater from './components/Updater';
+  import Navigation from "./components/Navigation";
 
   export default {
     name: 'App',
@@ -37,7 +38,7 @@
       return {
         error: '',
         loadingOn: true,
-        loadingMessage: 'Loading WP Vue',
+        loadingMessage: 'Booting Up Android TV News',
         loadingWheel: true,
         showUpdater: false,
         viewKey: 0,
@@ -88,7 +89,8 @@
     },
 
     components: {
-      Foot,
+        Navigation,
+        Foot,
       Loading,
       Updater
     }
@@ -97,10 +99,12 @@
 
 <style lang="scss">
   @import "assets/scss/_base.scss";
+  @import url('https://fonts.googleapis.com/css?family=Lora|Nunito');
 
   #app {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Lora', serif;
   }
 
   #wrapper {
@@ -111,5 +115,8 @@
     @include media($small) {
       padding: 2rem;
     }
+  }
+  h1 h2 h3 h4 h5 {
+    font-family: 'Nunito', sans-serif;
   }
 </style>
