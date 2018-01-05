@@ -1,14 +1,14 @@
 <template>
   <div>
 
-    <section>
-      <h1>WP Vue</h1>
+    <!--<section>-->
+      <!--<h1>WP Vue</h1>-->
 
-      <p>
-        A simple Vue template that displays posts from a WordPress REST API endpoint.
-        Take what you see here &amp; rip it apart as needed. To improve the base for everyone else, <a href="https://www.github.com/alexmacarthur/wp-vue">contribute on Github</a>.
-      </p>
-    </section>
+      <!--<p>-->
+        <!--A simple Vue template that displays posts from a WordPress REST API endpoint.-->
+        <!--Take what you see here &amp; rip it apart as needed. To improve the base for everyone else, <a href="https://www.github.com/alexmacarthur/wp-vue">contribute on Github</a>.-->
+      <!--</p>-->
+    <!--</section>-->
 
     <ul>
       <Card

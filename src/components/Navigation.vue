@@ -1,19 +1,14 @@
 <template>
+    <nav>
     <ul>
-        <li><router-link to="/">HOME</router-link></li>
-        <li><router-link to="/">LONGFORM</router-link></li>
-        <li><router-link to="/">GUIDES</router-link></li>
-        <li><router-link to="/">SHIELD</router-link></li>
-        <li><router-link to="/">PERIPHERALS</router-link></li>
-        <li><router-link to="/">DEVICES</router-link></li>
-        <li><router-link to="/">DEVELOPERS</router-link></li>
-        <li><router-link to="/">GAMES</router-link></li>
-        <li><router-link to="/">APPS</router-link></li>
-        <!--TODO Make this code below work-->
-        <li v-for=" item in menu" :key="item.title">
-            {{ item.title }}
+        <li v-for=" item in menu.data">
+            <!--Make Router-link dynamic-->
+            <router-link to="/">
+                {{ item.title }}
+            </router-link>
         </li>
     </ul>
+    </nav>
 </template>
 
 <script>
@@ -28,15 +23,14 @@
             return {
                 item: [],
                 menu: {
-                },
-                menuItems:[]
+                    title: []
+                }
             }
         },
 
         created: async function () {
-          this.menu = await axios.get('https://api.androidtv.news/wp-json/wp-api-menus/v2/menu-locations/primary');
-          this.menuItems = this.menu.title;
-            console.log(this.menuItems);
+            this.menu = await axios.get('https://api.androidtv.news/wp-json/wp-api-menus/v2/menu-locations/primary');
+            console.log(this.item.data.title);
         }
     }
 
@@ -66,6 +60,6 @@
 
     /* Change the link color to #111 (black) on hover */
     li a:hover {
-        background-color: rebeccapurple;
+        background-color: teal;
     }
 </style>
