@@ -98,6 +98,7 @@
 </script>
 
 <style lang="scss">
+  @import "~bulma";
   @import "assets/scss/_base.scss";
   @import url('https://fonts.googleapis.com/css?family=Lora|Nunito');
 

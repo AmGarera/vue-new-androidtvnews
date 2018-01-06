@@ -1,5 +1,11 @@
 <template>
-    <nav>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+            </a>
+        </div>
+        <div class="navbar-menu">
     <ul>
         <li v-for=" item in menu.data">
             <!--Make Router-link dynamic-->
@@ -8,6 +14,7 @@
             </router-link>
         </li>
     </ul>
+        </div>
     </nav>
 </template>
 
@@ -61,5 +68,8 @@
     /* Change the link color to #111 (black) on hover */
     li a:hover {
         background-color: teal;
+    }
+    .navbar {
+        background-color: grey;
     }
 </style>
