@@ -9,7 +9,7 @@
         <!--Take what you see here &amp; rip it apart as needed. To improve the base for everyone else, <a href="https://www.github.com/alexmacarthur/wp-vue">contribute on Github</a>.-->
       <!--</p>-->
     <!--</section>-->
-
+<div>
     <ul>
       <Card
         v-for="post in posts"
@@ -17,7 +17,7 @@
         :key="post.id"
       />
     </ul>
-
+</div>
     <Pagination
       :currentPage="parseInt(page)"
       :totalPages="parseInt(totalPages)"

@@ -1,15 +1,15 @@
 <template>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+            <a class="navbar-item" href="/">
+                <img src="https://api.androidtv.news/wp-content/uploads/2016/05/androidtvnewstWHITEfixed.png" alt="Android TV News">
             </a>
         </div>
         <div class="navbar-menu">
     <ul>
         <li v-for=" item in menu.data">
-            <!--Make Router-link dynamic-->
-            <router-link to="/">
+            <!--Make Router-link dynamic, this needs to be solved somehow-->
+            <router-link :to="{ name: 'page', params: { page: item.page } }">
                 {{ item.title }}
             </router-link>
         </li>
@@ -37,7 +37,8 @@
 
         created: async function () {
             this.menu = await axios.get('https://api.androidtv.news/wp-json/wp-api-menus/v2/menu-locations/primary');
-            console.log(this.item.data.title);
+            console.log(this.menu.data[0].title);
+
         }
     }
 
