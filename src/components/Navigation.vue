@@ -7,10 +7,10 @@
         </div>
         <div class="navbar-menu">
     <ul>
-        <li v-for=" item in menu.data">
+        <li v-for=" item in menu.data.items">
             <!--Make Router-link dynamic, this needs to be solved somehow-->
-            <router-link :to="{ name: 'page', params: { page: item.page } }">
-                {{ item.title }}
+            <router-link :to="{ name: 'page', params: { page: item.url } }">
+                {{ item.post_title }}
             </router-link>
         </li>
     </ul>
@@ -30,13 +30,13 @@
             return {
                 item: [],
                 menu: {
-                    title: []
+                    post_title: []
                 }
             }
         },
 
         created: async function () {
-            this.menu = await axios.get('https://api.androidtv.news/wp-json/wp-api-menus/v2/menu-locations/primary');
+            this.menu = await axios.get('https://api.androidtv.news/wp-json/menus/v1/menus/primary');
             console.log(this.menu.data[0].title);
 
         }

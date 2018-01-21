@@ -26,7 +26,7 @@ const routes = [
   {
     name: 'page',
     path: '/page/:page',
-    component: Feed
+    component: Post
   },
   {
     name: 'four-o-four',
