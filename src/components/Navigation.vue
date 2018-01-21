@@ -10,7 +10,7 @@
         <li v-for=" item in menu.data.items">
             <!--Make Router-link dynamic, this needs to be solved somehow-->
             <router-link :to="{ name: 'page', params: { page: item.url } }">
-                {{ item.post_title }}
+                {{ item.title }}
             </router-link>
         </li>
     </ul>
@@ -30,14 +30,13 @@
             return {
                 item: [],
                 menu: {
-                    post_title: []
+                    title: []
                 }
             }
         },
 
         created: async function () {
             this.menu = await axios.get('https://api.androidtv.news/wp-json/menus/v1/menus/primary');
-            console.log(this.menu.data[0].title);
 
         }
     }
